@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lunch Share</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="fullscreen-bg">
+        <img src="./img/lunch.jpg" class="fullscreen-media">
+    </div>
+
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"><img id="navLogo" src="img/logo.png"></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons navMenu">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#" id="allTradable1" class="navMenu">SHOW ALL TRADABLE LUNCHES</a></li>
+                <li><a href="#" id="signOut1" class="navMenu">SIGN OUT</a></li>
+            </ul>
+            <form class="right hide-on-med-and-down" id="searchForm">
+                <div class="input-field" style="width: 200pt;">
+                    <input id="search1" type="search" required>
+                    <label class="label-icon" for="search"><i class="material-icons navMenu">search</i></label>
+                    <i class="material-icons">close</i>
+                </div>
+            </form>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <div id="mobile-profile" class="row">
+            <div class="col s5">
+                <img id="userPic2" src="./img/profile.png">
+            </div>
+            <div id="userName2" class="col s7">Welcome,<br>Ethan!</div>
+        </div>
+        <div class="row">
+            <div class="input-field col s9" id="mobile-search">
+                <input id="search2" type="search">
+                <label for="search2">SEARCH TRADABLE LUNCH</label>
+            </div>
+            <div class="col s3">
+                <button type="submit" id="searchButton" class="waves-effect waves-light btn red darken-3">
+                    <i class="material-icons">search</i></button>
+            </div>
+        </div>
+        <li><a href="#" id="allTradable2" class="navMenu">SHOW ALL TRADABLE LUNCHES</a></li>
+        <li><a href="#" id="signOut2" class="navMenu">SIGN OUT</a></li>
+    </ul>
+
+    <div id="title3" class="row">
+        <div class="col l6 sub">
+            <div id="addLunch">
+                <form id="addLunchForm">
+                    <div class="input-field">
+                        <i class="material-icons prefix">restaurant</i>
+                        <input id="foodName" type="text" class="validate">
+                        <label for="foodName">FOOD NAME</label>
+                    </div>
+                    <label>
+                        <input id="trade" type="checkbox">
+                        <span class="tradeLabel">TRADE?</span>
+                    </label>
+                    <button type="submit" id="addButton" class="waves-effect waves-light btn red darken-3">
+                        ADD</button>
+                </form>
+            </div>
+        </div>
+        <div class="col l6 sub">
+            <div id="profile">
+                <div class="col s5">
+                    <img id="userPic1" src="./img/profile.png">
+                </div>
+                <div id="userName1" class="col s7">Welcome,<br>Ethan!</div>
+            </div>
+        </div>
+
+        <div class="col l6 sub">
+            <div id="myLunches">
+                <h5 id="myTitle">MY LUNCH</h5>
+                <div id="myItems" class="row"></div>
+            </div>
+        </div>
+
+        <div class="col l6 sub">
+            <div id="searchResults">
+                <h5>SEARCH RESULT</h5>
+                <div id="searchItems" class="row">
+                    <h4>(What do you want to eat? :)</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content center amber lighten-4">
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-trade center amber lighten-4">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" id="disagree" class="modal-close waves-effect waves-green btn-flat">Disagree</a>
+            <a href="#!" id="agree" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
+
+    <footer class="center red-text text-darken-3">
+            COPYRIGHT © 2019 EN MONTE PYTHONS, ALL RIGHTS RESERVED.
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+    <script src="./js/search.js"></script>
+</body>
+
+</html>
