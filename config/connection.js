@@ -8,7 +8,7 @@ if(process.env.JAWSBD_URL){
         host:"localhost",
         user: "root",
         password: "root",
-        database: `j6cbfa5jab9tczzk`,
+        database: "o68tkvzt7x351ohr",
     })
 }
 connection.connect()
