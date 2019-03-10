@@ -1,6 +1,10 @@
 var express = require("express");
 var app = express.Router();
 var db = require("../models");
+app.get('/', function(req, res){
+  res.redirect('/user');
+});
+
 
 //User's lunches
 app.get("/user/:id", function (req, res) {
