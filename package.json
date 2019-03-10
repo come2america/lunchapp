@@ -1,5 +1,5 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "mysql-sequelize-heroku",
   "version": "1.0.0",
   "description": "Share lunch",
   "main": "server.js",
@@ -9,6 +9,7 @@
     "fix": "eslint --fix .",
     "test": "npm run lint && NODE_ENV=test mocha -u tdd --reporter spec --exit"
   },
+  "author": "Yusuf S",
   "license": "ISC",
   "dependencies": {
     "crypto": "^1.0.1",
@@ -16,7 +17,9 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "express-jwt": "^5.3.1",
+    "i": "^0.3.6",
     "jsonwebtoken": "^8.5.0",
+    "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
     "path": "^0.12.7",
     "sequelize": "^4.41.2"
