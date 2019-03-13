@@ -184,6 +184,7 @@ $(document).ready(function () {
                         var button = $('<button class="foodTrade waves-effect waves-light btn orange lighten-1">').attr({ "id": resp[i].id, "data-name": resp[i].userID }).text("Trade");
                         var foodOption = $("<div class='foodOption col s3'>").append(button);
                         $("#searchItems").append(foodName).append(foodOption);
+
                     };
                 };
                 if (counter === 0) {
@@ -271,6 +272,9 @@ $(document).ready(function () {
     $("#searchButton").on("click", function (event) {
         event.preventDefault();
         searchLunch($("#search2").val().trim());
+        
+       
+       
     });
 
     function searchLunch(food) {
@@ -466,4 +470,8 @@ $(document).ready(function () {
             throw err;
         });
     });
+
+
 });
+
+
