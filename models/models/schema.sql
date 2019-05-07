@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS lunches;
-CREATE DATABASE lunches;

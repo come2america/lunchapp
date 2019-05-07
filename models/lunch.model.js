@@ -3,6 +3,7 @@ module.exports = function (sequelize, DataTypes) {
         userID: DataTypes.TINYINT,
         eater: DataTypes.STRING,
         lunch: DataTypes.STRING,
+        ingredients: DataTypes.STRING,
         tradable: DataTypes.BOOLEAN,
     });
     return Lunch;
