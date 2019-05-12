@@ -24,17 +24,19 @@
             <ul class="right hide-on-med-and-down">
                 <li><a href="#" id="allTradable1" class="navMenu">SHOW ALL TRADABLE LUNCHES</a></li>
                 <li><a href="#" id="signOut1" class="navMenu">SIGN OUT</a></li>
-                <li>  <a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=lunchsharer-20&linkCode=ur2&linkId=df79e1ba701ff76bb14a79890b895a46&camp=1789&creative=9325&index=grocery&keywords=" ${search2}.val()`><img src="./img/amzon.png" alt="Amazon Button"/></a>
+                <li> <a target="_blank"
+                        href="https://www.amazon.com/gp/search?ie=UTF8&tag=lunchsharer-20&linkCode=ur2&linkId=df79e1ba701ff76bb14a79890b895a46&camp=1789&creative=9325&index=grocery&keywords="
+                        ${search2}.val()`><img src="./img/amzon.png" alt="Amazon Button" /></a>
                 </li>
             </ul>
-            
+
             <form class="right hide-on-med-and-down" id="searchForm">
-                
+
                 <div class="input-field" style="width: 200pt;">
                     <input id="search1" type="search" required>
                     <label class="label-icon" for="search"><i class="material-icons navMenu">search</i></label>
                     <i class="material-icons">close</i>
-               </div>
+                </div>
             </form>
         </div>
     </nav>
@@ -45,13 +47,13 @@
                 <img id="userPic2" src="./img/profile.png">
             </div>
             <div id="userName2" class="col s7">Welcome,<br>Ethan!</div>
-            <div id="allergies" class="col s7">Allergic to <br> bread</div>
+            
         </div>
         <div class="row">
-            
-               
-           
-                <div class="input-field col s9" id="mobile-search">
+
+
+
+            <div class="input-field col s9" id="mobile-search">
                 <input id="search2" type="search">
                 <label for="search2">SEARCH TRADABLE LUNCH</label>
             </div>
@@ -62,7 +64,9 @@
         </div>
         <li><a href="#" id="allTradable2" class="navMenu">SHOW ALL TRADABLE LUNCHES</a></li>
         <li><a href="#" id="signOut2" class="navMenu">SIGN OUT</a></li>
-        <li><a target="_blank" href="https://www.amazon.com/gp/search?ie=UTF8&tag=lunchsharer-20&linkCode=ur2&linkId=df79e1ba701ff76bb14a79890b895a46&camp=1789&creative=9325&index=grocery&keywords=" ${search2}.val()`><img src="./img/amzon.png" alt="Amazon Button"/></a>
+        <li><a target="_blank"
+                href="https://www.amazon.com/gp/search?ie=UTF8&tag=lunchsharer-20&linkCode=ur2&linkId=df79e1ba701ff76bb14a79890b895a46&camp=1789&creative=9325&index=grocery&keywords="
+                ${search2}.val()`><img src="./img/amzon.png" alt="Amazon Button" /></a>
     </ul>
 
     <div id="title3" class="row">
@@ -73,13 +77,13 @@
                         <i class="material-icons prefix">restaurant</i>
                         <input id="foodName" type="text" class="validate">
                         <label for="foodName">FOOD NAME</label>
-                        
+
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">restaurant</i>
                         <input id="ingredients" type="text" class="validate">
                         <label for="ingredients">INGREDIENTS</label>
-                        
+
                     </div>
                     <label>
                         <input id="trade" type="checkbox">
@@ -96,7 +100,7 @@
                     <img id="userPic1" src="./img/profile.png">
                 </div>
                 <div id="userName1" class="col s7">Welcome,<br>Ethan!</div>
-                
+
             </div>
         </div>
 
@@ -115,8 +119,31 @@
                 </div>
             </div>
         </div>
+    <div class="col 16 sub" style="float:right">
+        <div id="myplate">
+            <div class="col s5">
+                <iframe src="https://www.choosemyplate.gov/widgets-sm/myplate-daily-checklist-input-start"
+                    scrolling="no" style="
+min-height: 350px;"></iframe>
+
+
+
+            </div>
+        </div>
     </div>
 
+    <div class="col 16 sub">
+        <div id="mynutrs">
+            <div class="col s5">
+                <iframe src="http://www.nutritiondata.com/widget/basic-search" frameborder="0" scrolling="no"
+                    width="245" height="360"> Your browser does not support inline frames or is currently configured not
+                    to display inline frames. </iframe>
+
+            </div>
+
+        </div>
+    </div>
+</div>
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
         <div class="modal-content center amber lighten-4">
@@ -131,7 +158,7 @@
             <a href="#!" id="agree" class="modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
     </div>
-   
+
     <footer class="center red-text text-darken-3">
         COPYRIGHT © Yusuf Serunjogi 2019, ALL RIGHTS RESERVED.
     </footer>
@@ -140,24 +167,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
     <script src="./js/search.js"></script>
-   
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="/__/firebase/6.0.2/firebase-app.js"></script>
 
-<!-- TODO: Add SDKs for Firebase products that you want to use
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/6.0.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#reserved-urls -->
 
-<!-- Initialize Firebase -->
-<script src="/__/firebase/init.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 </body>
-
-
-
-
-
-
-
-
-
-
-
