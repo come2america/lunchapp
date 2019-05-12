@@ -19,13 +19,14 @@ $(document).ready(function () {
 
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyCEwgxYdiSW1bo56p4Yn1PQ4f8dmWkQt9M",
+        apiKey: "AIzaSyCvBcag3zLL2UmActnn9Z4Aj6xnA4u6RPU",
         authDomain: "lunchapp-510ad.firebaseapp.com",
-        databaseURL: "https://lunchapp-510ad.firebaseio.com/",
+        databaseURL: "https://lunchapp-510ad.firebaseio.com",
         projectId: "lunchapp-510ad",
-        storageBucket: "lunchapp-510ad.appspot.com/",
-        messagingSenderId: "926839213984"
-    };
+        storageBucket: "lunchapp-510ad.appspot.com",
+        messagingSenderId: "926839213984",
+        appId: "1:926839213984:web:0ebcedcacfe5ac31"
+      };
     firebase.initializeApp(config);
     var database = firebase.database();
 
@@ -104,6 +105,12 @@ $(document).ready(function () {
                     mine: mine,
                     yours: yours
                 });
+
+                window.setTimeout(function () {
+                    window.location.assign("/search.html")
+                }, 2000);
+           
+           
             };
 
             var ok = rejects.indexOf(payload.userID);
@@ -215,6 +222,7 @@ $(document).ready(function () {
 
     $("#allTradable2").on("click", function (event) {
         event.preventDefault();
+        $('.sidenav').sidenav("close");
         tradableLunch();
     });
 
@@ -285,9 +293,8 @@ $(document).ready(function () {
 
     $("#searchButton").on("click", function (event) {
         event.preventDefault();
-        searchLunch($("#search2").val().trim());
-        
-       
+        $('.sidenav').sidenav("close");
+        searchLunch($("#search1").val().trim());
        
     });
 
