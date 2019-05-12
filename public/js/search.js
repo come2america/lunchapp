@@ -152,9 +152,9 @@ $(document).ready(function () {
                 } else {
                     $("#myItems").empty();
                     for (var i = 0; i < resp.length; i++) {
-                        var food = resp[i].lunch;
-                        var ingredients = resp[i].ingredients;
-                        var foodDate = "<span style='font-size:14px; font-weight:100; font-style: italic;'> (" + resp[i].createdAt + ")</span>"
+                        var food = resp[i].lunch + "<span style='font-size:14px; font-weight:100; font-style: italic;'>("+resp[i].ingredients+")</span>" +
+                        // var ingredients = ;
+                        "<span style='font-size:14px; font-weight:100; font-style: italic;'> (" + resp[i].createdAt + ")</span>"
                         if (resp[i].tradable) {
                                 food += " <span style='font-size:14px; font-weight:100; font-style: italic;'>(tradable)</span>";
                             };
@@ -163,9 +163,9 @@ $(document).ready(function () {
                         var button = $('<button class="foodDelete waves-effect waves-light btn orange lighten-1">').attr("id", resp[i].id).text("X");
                         var foodOption = $("<div class='foodOption col s2'>").append(button);
                     
-                        $("#myItems").append(foodName).append(foodOption);
-                        $("#myItems").append(ingredients);
-                        $("#myItems").append(foodDate)
+                        $("#myItems").append(foodName).append(foodOption)
+                        // $("#myItems").append(ingredients);
+                        // $("#myItems")
                     };
                 };
             }).catch(function (err) {
@@ -185,17 +185,18 @@ $(document).ready(function () {
                 for (var i = 0; i < resp.length; i++) {
                     if (payload.userID != resp[i].userID && resp[i].tradable) {
                         counter++;
-                        var ingredients = resp[i].ingredients;
-                        var foodDate = "<span style='font-size:14px; font-weight:100; font-style: italic;'> (" + resp[i].createdAt + ")</span>"
-
-                        var food = resp[i].lunch + " <span style='font-size:14px; font-weight:100; font-style: italic;'>(" + resp[i].eater + ")</span>" + " <span style='font-size:14px; font-weight:100; font-style: italic;'>(" + resp[i].ingredients + ")</span>";;
-                        var foodName = $("<div class='foodName col s9 amber lighten-4'>").attr("id", "food" + resp[i].id).html(food);
+                        var food = resp[i].lunch + "<span style='font-size:14px; font-weight:100; font-style: italic;'>("+resp[i].ingredients+")</span>" +
+                        // var ingredients = ;
+                        "<span style='font-size:14px; font-weight:100; font-style: italic;'> (" + resp[i].createdAt + ")</span>"
+                        if (resp[i].tradable) {
+                                food += " <span style='font-size:14px; font-weight:100; font-style: italic;'>(tradable)</span>";
+                            };
+                        var foodName = $("<div class='myFoodName col s10 amber lighten-4'>").attr("id", "food" + resp[i].id).html(food);
                         
                         var button = $('<button class="foodTrade waves-effect waves-light btn orange lighten-1">').attr({ "id": resp[i].id, "data-name": resp[i].userID }).text("Trade");
                         var foodOption = $("<div class='foodOption col s3'>").append(button);
                         $("#searchItems").append(foodName).append(foodOption);
-                        $("#searchItems").append(ingredients);
-                        $("#searchItems").append(foodDate)
+                        
 
                     };
                 };
