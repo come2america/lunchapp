@@ -19,12 +19,12 @@ $(document).ready(function () {
 
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyBxDrdk8o6TGy3lVqgwyQz2jIz6zuBf-Qk",
-        authDomain: "aka-joe-project.firebaseapp.com",
-        databaseURL: "https://aka-joe-project.firebaseio.com",
-        projectId: "aka-joe-project",
-        storageBucket: "aka-joe-project.appspot.com",
-        messagingSenderId: "682758063555"
+        apiKey: "AIzaSyCEwgxYdiSW1bo56p4Yn1PQ4f8dmWkQt9M",
+        authDomain: "lunchapp-510ad.firebaseapp.com",
+        databaseURL: "https://lunchapp-510ad.firebaseio.com/",
+        projectId: "lunchapp-510ad",
+        storageBucket: "lunchapp-510ad.appspot.com/",
+        messagingSenderId: "926839213984"
     };
     firebase.initializeApp(config);
     var database = firebase.database();
