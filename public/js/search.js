@@ -16,7 +16,51 @@ $(document).ready(function () {
             };
         };
     };
-
+    var timer;
+    var startTime;
+    
+    function start() {
+      startTime = parseInt(localStorage.getItem('startTime') || Date.now());
+      localStorage.setItem('startTime', startTime);
+      timer = setInterval(clockTick, 100);
+    }
+    
+    function stop() {
+      clearInterval(timer);
+    }
+    
+    function reset() {
+      clearInterval(timer);
+      localStorage.removeItem('startTime');
+      document.getElementById('display-area').innerHTML = "00:00:00.000";
+      location.reload();
+    }
+    
+    function clockTick() {
+      var currentTime = Date.now(),
+        timeElapsed = new Date(currentTime - startTime),
+        hours = timeElapsed.getUTCHours(),
+        mins = timeElapsed.getUTCMinutes(),
+        secs = timeElapsed.getUTCSeconds(),
+        ms = timeElapsed.getUTCMilliseconds(),
+        display = document.getElementById("display-area");
+    
+      display.innerHTML =
+        (hours > 9 ? hours : "0" + hours) + ":" +
+        (mins > 9 ? mins : "0" + mins) + ":" +
+        (secs > 9 ? secs : "0" + secs) + "." +
+        (ms > 99 ? ms : ms > 9 ? "0" + ms : "00" + ms);
+    };
+    
+    var stopBtn = document.getElementById('stop_btn');
+    
+    stopBtn.addEventListener('click', function() {
+      stop();
+      reset()
+    })
+    start();
+    
+    
     // Initialize Firebase
     var config = {
         apiKey: "AIzaSyCvBcag3zLL2UmActnn9Z4Aj6xnA4u6RPU",
@@ -496,30 +540,7 @@ $(document).ready(function () {
             throw err;
         });
     });
-    var time_in_minutes = 30;
-    var current_time = Date.parse(new Date());
-    var deadline = new Date(current_time + time_in_minutes*60*1000);
-    
-    
-    function time_remaining(endtime){
-        var t = Date.parse(endtime) - Date.parse(new Date());
-        var seconds = Math.floor( (t/1000) % 60 );
-        var minutes = Math.floor( (t/1000/60) % 60 );
-        var hours = Math.floor( (t/(1000*60*60)) % 24 );
-        var days = Math.floor( t/(1000*60*60*24) );
-        return {'total':t, 'days':days, 'hours':hours, 'minutes':minutes, 'seconds':seconds};
-    }
-    function run_clock(id,endtime){
-        var clock = document.getElementById(id);
-        function update_clock(){
-            var t = time_remaining(endtime);
-            clock.innerHTML = 'minutes: '+t.minutes+'<br>seconds: '+t.seconds;
-            if(t.total<=0){ clearInterval(timeinterval); }
-        }
-        update_clock(); // run function once at first to avoid delay
-        var timeinterval = setInterval(update_clock,1000);
-    }
-    run_clock('clockdiv',deadline);
+  
 
 });
 
