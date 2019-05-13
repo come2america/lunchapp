@@ -168,15 +168,15 @@ button {
 
 #myplate {
   text-align: center;
-  width:520px;
-  padding: 50px 120px;
+  min-width: 380px;
+  padding: 30px 50px 20px;
   margin-bottom: 20px;
   border-radius: 7px;
   background-color: rgba(255, 255, 255, 0.8)
 }
 
 #myplate {
-height: 400px;
+height: 200px;
 }
 
 #mynutrs {
