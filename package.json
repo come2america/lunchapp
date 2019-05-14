@@ -12,6 +12,8 @@
   "author": "Yusuf S",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors-anywhere": "^0.4.1",
     "crypto": "^1.0.1",
     "dotenv": "^6.2.0",
     "express": "^4.16.3",
@@ -23,7 +25,10 @@
     "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
     "path": "^0.12.7",
-    "sequelize": "^4.41.2"
+    "pusher": "^2.2.0",
+    "sequelize": "^4.41.2",
+    "socket.io": "^2.2.0",
+    "socket.io-redis": "^5.2.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
