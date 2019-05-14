@@ -87,7 +87,7 @@ $(document).ready(function(){
             const message = $("#message").val();
             $("#message").val("");
                 //send message
-            $.post( "http://localhost:3000/search.html", { message, name: profile.name } );
+            $.post( "http://localhost:3000/message", { message, name: profile.name } );
         });  
     }
 });

@@ -61,7 +61,7 @@ $(document).ready(function () {
     })
     start();
     var xhr = new XMLHttpRequest()
-    xhr.open('POST', 'http://localhost:3000/search.html', true)
+    xhr.open('POST', 'http://localhost:3000/message', true)
     xhr.withCredentials = true
     xhr.onreadystatechange = function() {
       if (xhr.readyState === 2) {//do something
