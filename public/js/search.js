@@ -60,13 +60,13 @@ $(document).ready(function () {
       reset()
     })
     start();
-    var xhr = new XMLHttpRequest()
-    xhr.open('POST', '/message', true)
-    xhr.withCredentials = true
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 2) {//do something
-    };}
-    xhr.setRequestHeader('Content-Type', 'application/json');
+    // var xhr = new XMLHttpRequest()
+    // xhr.open('POST', 'http://localhost:3000/search.html', true)
+    // xhr.withCredentials = true
+    // xhr.onreadystatechange = function() {
+    //   if (xhr.readyState === 2) {//do something
+    // };}
+    // xhr.setRequestHeader('Content-Type', 'application/json');
   
 
     
@@ -551,6 +551,61 @@ $(document).ready(function () {
         });
     });
   
+    function onMessageAdded(data) {
+        let template = $("#new-message").html();
+        template = template.replace("{{body}}", data.message);
+      
+
+        $(".chat").append(template);
+    }
+
+    // if(!isAuthenticated && !window.location.hash){
+    //     lock.show();
+    // }
+    // else{
+    //     if(profile){
+    //         $("#username").html(profile.name);
+    //     }
+
+        // Enable pusher logging - don't include this in production
+        // Pusher.logToConsole = true;
+
+        $("#username").html(payload.userID);
+        var pusher = new Pusher('5f7a51d01f971c30ce3a', {
+            cluster: 'us3',
+            forceTLS: true
+          });
+
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('my-event', onMessageAdded);
+        
+
+
+        $('#btn-chat').click(function(){
+            event.preventDefault();
+            const message = $("#message").val();
+            $("#message").val("");
+                //send message
+                $.ajax({ 
+                    type: "POST", 
+                    url: "http://localhost:3000/message", 
+                    message ,
+                    headers: { "Authorization": 'Bearer ' + token }
+                  }); 
+                     
+                   
+                   
+                
+                    // .then(function (resp) {
+                    //     window.localStorage.setItem("EnMonte", "Pythons");
+                    //     window.localStorage.setItem("token", resp.token);
+        
+                    //     window.setTimeout(function () {
+                    //         window.location.assign("/search.html")
+                    //     }, 400) })
+    //   }) 
+
+                        })
 
 });
 

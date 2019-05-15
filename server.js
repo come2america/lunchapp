@@ -35,17 +35,17 @@ var pusher = new Pusher({
   cluster: 'us3',
   encrypted: true
 });
-app.post('/pusher/auth', function(req, res) {
-  var socketId = req.body.socket_id;
-  var channel = req.body.channel_name;
-  var auth = pusher.authenticate(socketId, channel);
-  res.send(auth);
-});
+// app.post('/pusher/auth', function(req, res) {
+//   var socketId = req.body.socket_id;
+//   var channel = req.body.channel_name;
+//   var auth = pusher.authenticate(socketId, channel);
+//   res.send(auth);
+// });
 
 app.post('/message', function(req, res) {
   var message = req.body.message;
   var name = req.body.name;
-  pusher.trigger( 'private-chat', 'message-added', { message, name });
+  pusher.trigger( 'my-channel', 'message-added', { message });
   res.sendStatus(200);
 });
 
