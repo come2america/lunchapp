@@ -588,7 +588,7 @@ $(document).ready(function () {
                 //send message
                 $.ajax({ 
                     type: "POST", 
-                    url: "http://localhost:3000/message", 
+                    url: "/message", 
                     message ,
                     headers: { "Authorization": 'Bearer ' + token }
                   }); 
