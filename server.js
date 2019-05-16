@@ -45,7 +45,7 @@ var pusher = new Pusher({
 app.post('/message', function(req, res) {
   var message = req.body.message;
   var name = req.body.name;
-  pusher.trigger( 'my-channel', 'message-added', { message });
+  pusher.trigger( 'lunchapp-development', 'my-event', {   "message": message  });
   res.sendStatus(200);
 });
 

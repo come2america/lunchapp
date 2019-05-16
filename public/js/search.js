@@ -553,7 +553,7 @@ $(document).ready(function () {
   
     function onMessageAdded(data) {
         let template = $("#new-message").html();
-        template = template.replace("{{body}}", data.message);
+        template = template.replace(req.body, data.message);
       
 
         $(".chat").append(template);
@@ -576,20 +576,21 @@ $(document).ready(function () {
             forceTLS: true
           });
 
-        var channel = pusher.subscribe('my-channel');
+        var channel = pusher.subscribe('lunchapp-development');
         channel.bind('my-event', onMessageAdded);
-        
-
+  
 
         $('#btn-chat').click(function(){
             event.preventDefault();
+
+             $("#message").val("");
             const message = $("#message").val();
-            $("#message").val("");
+           
                 //send message
                 $.ajax({ 
                     type: "POST", 
                     url: "/message", 
-                    message ,
+                    data: {"message":message}   ,
                     headers: { "Authorization": 'Bearer ' + token }
                   }); 
                      

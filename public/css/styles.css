@@ -192,7 +192,18 @@ height: 260px;
 height: 430px;
 }
 
+#myforum {
+  text-align: center;
+  min-width: 700px;
+  padding: 30px 40px 20px;
+  margin-bottom: 70px;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.8)
+}
 
+#myforum {
+height: 820px;
+}
 
 h4 {
   font-size: 20px;
