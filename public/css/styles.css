@@ -48,6 +48,7 @@ footer {
 
 #title3 {
   margin-top: 40px;
+  margin-left: 50px;
   text-align: center;
   width: 90%;
   /* top: 50%;
@@ -169,7 +170,7 @@ button {
 #myplate {
   text-align: center;
   min-width: 380px;
-  padding: 30px 50px 20px;
+  padding: 30px 50px;
   margin-bottom: 20px;
   border-radius: 7px;
   background-color: rgba(255, 255, 255, 0.8)
@@ -179,30 +180,17 @@ button {
 height: 260px;
 }
 
-#mynutrs {
+#myforum {
   text-align: center;
-  width: 530px;
-  padding: 30px 120px;
+  min-width: 380px;
+  padding: 30px 50px ;
   margin-bottom: 20px;
   border-radius: 7px;
   background-color: rgba(255, 255, 255, 0.8)
 }
 
-#mynutrs {
-height: 430px;
-}
-
 #myforum {
-  text-align: center;
-  min-width: 700px;
-  padding: 30px 40px 20px;
-  margin-bottom: 70px;
-  border-radius: 7px;
-  background-color: rgba(255, 255, 255, 0.8)
-}
-
-#myforum {
-height: 820px;
+height: 90px;
 }
 
 h4 {
