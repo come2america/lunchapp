@@ -17,7 +17,7 @@ if (config.use_env_variable) {
     config.password,
     config
   );
-};
+}
 
 fs.readdirSync(__dirname)
   .filter(function(file) {
@@ -35,7 +35,6 @@ Object.keys(db).forEach(function(modelName) {
     db[modelName].associate(db);
   }
 });
-
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

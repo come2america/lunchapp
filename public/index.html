@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Lunch Share</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+    <div class="fullscreen-bg">
+        <video autoplay muted class="fullscreen-media">
+            <source src="./img/lunch.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="title" class="container">
+        <img id="logo" class="responsive-img" src="./img/logo.png">
+
+        <div id="sign">
+            <button id="signIn" class="waves-effect waves-light btn-large red darken-3">Sign In</button>
+            <button id="signUp" class="waves-effect waves-light btn-large red darken-3">Sign Up</button>
+        </div>
+
+        <form id="signInForm">
+            <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <input id="id" type="email" class="validate">
+                <label for="id">EMAIL</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">vpn_key</i>
+                <input id="pw" type="password" class="validate">
+                <label for="pw">PASSWORD</label>
+            </div>
+            <button type="submit" id="signInButton" class="waves-effect waves-light btn-large red darken-3">
+                Sign In</button>
+        </form>
+
+        <form id="signUpForm">
+            <div class="input-field">
+                <i class="material-icons prefix">account_circle</i>
+                <input id="name" type="text" class="validate">
+                <label for="name">NAME</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <input id="email" type="email" class="validate">
+                <label for="email">EMAIL</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">vpn_key</i>
+                <input id="password" type="password" class="validate">
+                <label for="password">PASSWORD</label>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">insert_link</i>
+                <input id="pic" type="url" class="validate">
+                <label for="pic">LINK TO PIC (Optional)</label>
+            </div>
+            <button type="submit" id="signUpButton" class="waves-effect waves-light btn-large red darken-3">
+                Sign Up</button>
+        </form>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content center amber lighten-4">
+        </div>
+    </div>
+
+    <footer class="footer-copyright center" style="position: fixed;">
+        <div class="container red-text text-darken-3">
+            COPYRIGHT © 2019 EN MONTE PYTHONS, ALL RIGHTS RESERVED.
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
+
