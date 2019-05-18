@@ -48,10 +48,10 @@ footer {
 
 #title3 {
   margin-top: 40px;
-  margin-left: 10px;
+  margin-left: 30px;
   text-align: center;
-  /* width: 90%; */
-  min-width: 360px;
+  width: 90%;
+  /* min-width: 360px; */
   /* top: 50%;
   left: 50%;
   position: absolute;
@@ -155,9 +155,9 @@ button {
   padding-left: 10px;
 }
 
-#addLunch, #myLunches, #searchResults, #profile {
+#addLunch, #profile {
     text-align: center;
-    min-width: 380px;
+    width: 530px;
     padding: 30px 50px;
     margin-bottom: 20px;
     border-radius: 7px;
@@ -165,16 +165,25 @@ button {
 }
 
 #addLunch, #profile {
-  height: 300px;
+  height: 250px;
 }
-#myLunches{
-  float: right;
+ #myLunches, #searchResults{
+  text-align: center;
+  width: 530px;
+  padding: 30px 50px;
+  margin-bottom: 20px;
+  border-radius: 7px;
+  background-color: rgba(255, 255, 255, 0.8)
+}
+
+#myLunches, #searchResults {
+height: 250px;
 }
 
 #myplate {
  
   text-align: center;
-  min-width: 380px;
+  width: 530px;
   padding: 30px 50px;
   margin-bottom: 20px;
   border-radius: 7px;
@@ -187,7 +196,7 @@ height: 260px;
 
 #myforum {
   text-align: center;
-  min-width: 380px;
+  width: 530px;
   padding: 30px 50px ;
   margin-bottom: 20px;
   border-radius: 7px;
