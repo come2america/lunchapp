@@ -38,6 +38,7 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons navMenu">menu</i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="#" id="allTradable1" class="navMenu">SHOW ALL TRADABLE LUNCHES</a></li>
+                <li><a href="#" id="allrequested1" class="navMenu">SHOW ALL REQUESTED LUNCHES</a></li>
                 <li><a href="#" id="signOut1" class="navMenu">SIGN OUT</a></li>
                 <li> <a target="_blank"
                         href="https://www.amazon.com/gp/search?ie=UTF8&tag=lunchsharer-20&linkCode=ur2&linkId=df79e1ba701ff76bb14a79890b895a46&camp=1789&creative=9325&index=grocery&keywords="
@@ -78,6 +79,7 @@
             </div>
         </div>
         <li><a href="#" id="allTradable2" class="navMenu">SHOW ALL TRADABLE LUNCHES</a></li>
+        <li><a href="#" id="allrequested2" class="navMenu">SHOW ALL REQUESTED LUNCHES</a></li>
         <li><a href="#" id="signOut2" class="navMenu">SIGN OUT</a></li>
         <li><a target="_blank"
                 href="https://www.amazon.com/gp/search?ie=UTF8&tag=lunchsharer-20&linkCode=ur2&linkId=df79e1ba701ff76bb14a79890b895a46&camp=1789&creative=9325&index=grocery&keywords="
@@ -100,10 +102,20 @@
                         <label for="ingredients">INGREDIENTS</label>
 
                     </div>
+                    <div class="input-field">
+                            <i class="material-icons prefix">restaurant</i>
+                            <input id="school" type="text" class="validate">
+                            <label for="school">SCHOOL</label>
+    
+                        </div>
                     <label>
                         <input id="trade" type="checkbox">
                         <span class="tradeLabel">TRADE?</span>
                     </label>
+                    <label>
+                            <input id="requested" type="checkbox">
+                            <span class="requestLabel">REQUEST?</span>
+                        </label>
                     <button type="submit" id="addButton" class="waves-effect waves-light btn red darken-3">
                         ADD</button>
                 </form>
@@ -135,6 +147,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="col 16 sub ">
+                <div id="requestedResults">
+                    <h5>REQUESTED RESULT</h5>
+                    <button type="submit" id="phonenumber" class="waves-effect waves-light btn red darken-3">
+                            REQUEST CHECKUP</button>
+                    <div id="requestedItems" class="row">
+                        <h4>(Do You Cook, What do ppl want to eat? :)</h4>
+
+                    </div>
+                </div>
+            </div>
     </div>
 
     <div id="title3" class="row">
@@ -155,6 +179,7 @@
         </div>
         <div class="col 16 sub">
             <div id="myforum">
+                
                 <input class="waves-effect waves-light btn red darken-3 row" type="button" value="ADD TO SCHOOL FORUM"
                     onclick="window.open('http://lunchsharer.129109.n8.nabble.com/','popUpWindow','height=500,width=400,left=100,top=100,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no, status=yes')">
             </div>
@@ -233,6 +258,7 @@
         <div class="modal-trade center amber lighten-4">
         </div>
         <div class="modal-footer">
+                <p class="modal-close waves-effect waves-green btn-flat">CHECK INGREDIENTS FOR ALLERGENS</a>
             <a href="#!" id="disagree" class="modal-close waves-effect waves-green btn-flat">Disagree</a>
             <a href="#!" id="agree" class="modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>

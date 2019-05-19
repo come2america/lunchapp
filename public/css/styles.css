@@ -168,7 +168,7 @@ button {
 #addLunch, #profile {
   height: 250px;
 }
- #myLunches, #searchResults{
+ #myLunches, #searchResults, #requestedResults{
   text-align: center;
   width: 530px;
   padding: 30px 50px;
@@ -177,8 +177,8 @@ button {
   background-color: rgba(255, 255, 255, 0.8)
 }
 
-#myLunches, #searchResults {
-height: 250px;
+#myLunches, #searchResults,#requestedResults {
+min-height: 250px;
 }
 
 #myplate {
