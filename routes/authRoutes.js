@@ -5,6 +5,9 @@ var models = require("../models");
 var crypto = require("crypto");
 var jwt = require('jsonwebtoken');
 
+
+
+
 router.post('/message', function(req, res) {
     if(!req.body.password || !req.body.email) {
         return res.status(400).json({msg: new Error("Please put all data on body")});

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div id="container">
+
+        <div class=col-md-1> </div>
+        <div class="jumbotron col-md-10">
+            <h2>Survey Questions </h2>
+            <h3>About You</h3>
+            <form>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control " id="name" placeholder="Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputFile">Photo input</label>
+                    <input type="text" id="input" />
+                    <p class="help-block">Photo</p>
+                </div>
+
+
+
+
+                <div>
+
+                    <p><span id="singer1"></span> is better than <span id="singer2"></span> </p>
+
+                    <div class="dropdown">
+                        <strong> Agree Or DisAgree</strong>
+                        <select id="drop1" class=" btn btn-primary dropdown-toggle" type="option"
+                            data-toggle="dropdown">
+                            <option>5</option>
+                            <option>4</option>
+                            <option>3</option>
+                            <option>2</option>
+                            <option>1</option>
+                        </select>
+                    </div>
+
+                </div>
+                <div>
+
+                    <p><span id="singer3"></span> is better than <span id="singer4"></span> </p>
+                    <div class="dropdown">
+                        <strong> Agree Or DisAgree</strong>
+                        <select id="drop2" class="  btn btn-primary dropdown-toggle" type="option"
+                            data-toggle="dropdown">
+                            <option>5</option>
+                            <option>4</option>
+                            <option>3</option>
+                            <option>2</option>
+                            <option>1</option>
+                        </select>
+                    </div>
+
+
+                </div>
+                <div>
+
+                    <p><span id="singer5"></span> is better than <span id="singer6"></span> </p>
+                    <div class="dropdown">
+                        <strong> Agree Or DisAgree</strong>
+                        <select id="drop3" class="  btn btn-primary dropdown-toggle" type="option"
+                            data-toggle="dropdown">
+                            <option>5</option>
+                            <option>4</option>
+                            <option>3</option>
+                            <option>2</option>
+                            <option>1</option>
+                        </select>
+                    </div>
+
+
+                </div>
+                <div>
+
+                    <p><span id="singer7"></span> is better than <span id="singer8"></span> </p>
+
+                    <div class="dropdown">
+                        <strong> Agree Or DisAgree</strong>
+                        <select id="drop4" class="  btn btn-primary dropdown-toggle" type="option"
+                            data-toggle="dropdown">
+                            <option>5</option>
+                            <option>4</option>
+                            <option>3</option>
+                            <option>2</option>
+                            <option>1</option>
+                        </select>
+                    </div>
+
+
+                </div>
+                <div>
+
+                    <p><span id="singer9"></span> is better than <span id="singer10"></span> </p>
+
+                    <div class="dropdown">
+                        <strong> Agree Or DisAgree</strong>
+                        <select id="drop5" class="  btn btn-primary dropdown-toggle" type="option"
+                            data-toggle="dropdown">
+                            <option>5</option>
+                            <option>4</option>
+                            <option>3</option>
+                            <option>2</option>
+                            <option>1</option>
+                        </select>
+                    </div>
+
+
+                </div>
+
+                <button type="submit" class=" submit btn  btn-primary" data-toggle="modal"
+                    data-target="#myModal">Submit</button>
+
+
+
+            </form>
+
+
+
+
+        </div>
+        <div class=col-md-1> </div>
+    </div>
+
+    <!-- Trigger the modal with a button -->
+
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Friend Match</h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <a href="/survey">API Survey Link</a>
+        |
+        <a href="">API Wait List</a>
+    </footer>
+</body>
+
+
+</html>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        var valid = window.localStorage.getItem("EnMonte");
+
+        if (!valid) {
+            window.localStorage.clear();
+            window.location.assign("/search.html")
+        } else {
+            var token = window.localStorage.getItem("token");
+
+            if (token) {
+                var payload = JSON.parse(window.atob(token.split('.')[1]));
+                var currentTime = new Date();
+
+                if (payload.exp < currentTime / 1000) {
+                    window.location.assign("/search.html")
+                };
+            };
+        };
+        var names1 = ["Beastie Boys",
+            "Run DMC",
+            "Public Enemy",
+            "N.W.A",
+            "Eric B. & Rakim"
+        ]
+        var names2 = ["LL Cool J",
+            "Grandmaster Flash & the Furious Five",
+            "Boogie Down Productions",
+            "EPMD",
+            "De La Soselect"]
+        var names3 = ["The Notorious B.I.G",
+            "2Pac",
+            "Nas",
+            "Scarface",
+            "Jay-Z",
+            "Andre 3000",
+            "Snoop Dogg"]
+        var names4 = [
+            "Ice Cube",
+            "Big Boi",
+            "Lauryn Hill",
+            "Redman",
+            "Method Man"]
+        var names5 = [
+            "Eminem",
+            "Kanye West",
+            "T.I",
+            "Young Jeezy",
+            "50 cent",
+            "Fabolous",
+            "Snoop Dogg",
+        ]
+        var names6 = ["Bow Bow",
+            "Lil Wayne",
+            "Ludacris",
+            "Andre 3000",
+            "Nelly",
+            "Busta Rhymes"
+        ]
+        var names7 = [
+            "Lupe Fiasco",
+            "Pusha T",
+            "Big K.R.I.T",
+            "Freddie Gibbs",
+            "Danny Brown",
+            "Rick Ross",
+            "J. Cole"
+        ]
+        var names8 = ["Kendrick Lamar",
+            "Drake",
+            "Big Sean",
+            "The Game",
+            "Logic"
+        ]
+        var names9 = [
+            "Jay Rock",
+            "Young Thug",
+            "Rae Sremmurd",
+            "Mac Miller",
+            "Logic",
+            "Meek Mill",
+        ]
+        var names10 = ["Rapsody",
+            "Tyler, The Creator",
+            "Lil Uzi Vert",
+            "Future",
+            "Migos",
+            "Nikki Minaj"]
+        for (var i = 0; i < names1.length; i++) {
+            var selnames1 = names1[Math.floor(Math.random() * names1.length)]
+            $("#singer1").text(selnames1)
+        }
+        for (var i = 0; i < names2.length; i++) {
+            var selnames2 = names2[Math.floor(Math.random() * names2.length)]
+            $("#singer2").text(selnames2)
+        }
+        for (var i = 0; i < names3.length; i++) {
+            var selnames3 = names3[Math.floor(Math.random() * names3.length)]
+            $("#singer3").text(selnames3)
+        }
+        for (var i = 0; i < names4.length; i++) {
+            var selnames4 = names4[Math.floor(Math.random() * names4.length)]
+            $("#singer4").text(selnames4)
+        }
+        for (var i = 0; i < names5.length; i++) {
+            var selnames5 = names5[Math.floor(Math.random() * names5.length)]
+            $("#singer5").text(selnames5)
+        }
+        for (var i = 0; i < names6.length; i++) {
+            var selnames6 = names6[Math.floor(Math.random() * names6.length)]
+            $("#singer6").text(selnames6)
+        }
+        for (var i = 0; i < names7.length; i++) {
+            var selnames7 = names7[Math.floor(Math.random() * names7.length)]
+            $("#singer7").text(selnames7)
+        }
+        for (var i = 0; i < names8.length; i++) {
+            var selnames8 = names8[Math.floor(Math.random() * names8.length)]
+            $("#singer8").text(selnames8)
+        }
+        for (var i = 0; i < names9.length; i++) {
+            var selnames9 = names9[Math.floor(Math.random() * names9.length)]
+            $("#singer9").text(selnames9)
+        }
+        for (var i = 0; i < names8.length; i++) {
+            var selnames10 = names10[Math.floor(Math.random() * names10.length)]
+            $("#singer10").text(selnames10)
+        }
+        $(".submit").on("click", function (e) {
+            e.preventDefault();
+            var userInput = {
+                name: $("#name").val().trim(),
+                // photo: $("#input"),
+                points: (Number($("#drop1").val()) + Number($("#drop2").val()) + Number($("#drop3").val()) + Number($("#drop4").val()) + Number($("#drop5").val()))
+
+            }
+            console.log(userInput)
+            // $.post("/survey", userInput)
+            // .then(function(data) {
+            //   console.log("/survey.html", data);
+            //   alert("Adding your User...");
+
+            // });
+            $.ajax({
+                url: "../api/survey",
+
+                method: "POST",
+                headers: { "Authorization": 'Bearer ' + token },
+                data: {
+                 userInput
+                },
+
+                success: function (data) {
+                    console.log("/survey.html", data);
+                    alert("Adding your User...");
+                }
+            })
+
+
+            $.ajax({
+                url: "../api/survey",
+                method: "GET",
+                headers: { "Authorization": 'Bearer ' + token },
+                success: function (data) {
+                    console.log("get", data);
+
+                    var div = $("<div></div>");
+                    var p = "<p>---------------------</p>";
+                    var name = $("<p><strong>Name:</strong> " + data.name + "</p>")
+
+                    // var photo = $("<p><strong>Photo:</strong> " + data[i].photo + "</p>")
+                    var points = $("<p><strong>Points:</strong> " + data.points + "</p>")
+                    div.append(name, points, p)
+                    $(".modal-body").append(div);
+
+                }
+            }
+
+
+
+
+                //         $.get("/survey", function(data) {
+                //     console.log(data);
+
+                //         var div = $("<div></div>");
+                //         var p = "<p>---------------------</p>";
+                //         var name = $("<p><strong>Name:</strong> " + data.name + "</p>")
+
+                //         // var photo = $("<p><strong>Photo:</strong> " + data[i].photo + "</p>")
+                //         var points = $("<p><strong>Points:</strong> " + data.points+ "</p>")
+                //         div.append( name,points, p)
+                //       $(".modal-body").append(div);
+
+
+
+            );
+        })
+    })
+</script>

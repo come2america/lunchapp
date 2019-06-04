@@ -13,6 +13,16 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 
 
+var path = require("path");
+
+
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+require(path.join(__dirname, "./routes/htmlRoutes"))(app);
+
+
 // Middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -23,18 +33,7 @@ app.use(express.static("public"));
 app.use("/auth", authRoutes);
 app.use(auth);
 app.use("/api", apiRoutes);
-var bodyParser = require('body-parser');
-var Pusher = require('pusher');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-var pusher = new Pusher({
-  appId: '781678',
-  key: '21722c1ceacd4d08f2cf',
-  secret: 'a37a2a855cc66c58d648',
-  cluster: 'us3',
-  encrypted: true
-});
 // app.post('/pusher/auth', function(req, res) {
 //   var socketId = req.body.socket_id;
 //   var channel = req.body.channel_name;
@@ -49,7 +48,7 @@ app.post('/message', function(req, res) {
   res.sendStatus(200);
 });
 
-app.get('/',function(req,res){
+app.get('/friends',function(req,res){
       res.sendFile('/public/search.html', {root: __dirname });
 });
 

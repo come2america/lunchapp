@@ -89,4 +89,45 @@ app.get("/food/:id", function (req, res) {
     });
 });
 
+  var friends = [
+      {
+          name: "Bob",
+          photo: "",
+         points: 25
+      }
+  ];
+  var matches= {};
+  
+  
+  app.post("/survey", function(req, res) {
+      
+      var userInput = req.body;
+      
+      // console.log(userInput);
+    
+   for( var y=1 ; y< friends.length;y++){
+       if((Number(userInput.points))-(Number(friends[y].points))<=3){
+      matches=friends[y]; 
+  
+  }
+  //  res.json(matches);
+   }
+ 
+     friends.push(userInput);
+  
+  
+  //   usergetter()
+    });
+  
+  
+  app.get("/survey", function (req, res) {
+      return res.json(matches);
+  
+  })
+  
+  
+  
+  
+
+
 module.exports = app;
