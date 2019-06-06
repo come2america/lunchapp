@@ -724,5 +724,3 @@ $(document).ready(function () {
                         })
 
 });
-
-

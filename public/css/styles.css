@@ -6,7 +6,9 @@ footer {
   font-size: 12px;
   text-align: center;
 }
-
+body{
+  width:100%
+}
 #navLogo {
   width: 250px;
   margin: 5px;
@@ -52,11 +54,11 @@ footer {
   margin-left: 10px;
   text-align: center;
   width: 90%;
-  /* min-width: 360px; */
+  min-width: 360px;
   /* top: 50%;
   left: 50%;
   position: absolute;
-  transform: translate(-50%, -50%); */
+   transform: translate(-50%, -50%); */ 
   min-height: calc(100vh - 200px);
 }
 
@@ -254,7 +256,7 @@ h5 {
 }
 
 /* Media query for mobile responsive */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 600px) {
   #title3, .sub {
     width: 600px;
   }
@@ -270,10 +272,24 @@ h5 {
     position: relative;
   }
 }
-
 @media screen and (max-width: 600px) {
   #title3, .sub {
-    width: 100%;
+    width: 300px;
+  }
+  #title3 {
+    position: static;
+    margin-top: 20px;
+    transform: none;
+  }
+  #profile {
+    display: none;
+  }
+  footer {
+    position: relative;
+  }}
+@media screen and (max-width: 600px) {
+   #title3, .sub {
+    width: 300px;
   }
   #navLogo {
     width: 220px;

@@ -162,3 +162,8 @@ i {
 .impress-supported .fallback-message {
   display: none;
 }
+@media screen and (max-width: 600px) {
+  .step, .sub {
+    width: 80%;
+  }
+}
